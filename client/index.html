@@ -11,7 +11,28 @@
       <h1>Videos</h1>
     </nav>
     <div class="container">
-      <ul id="video-list"></ul>
+      <h3 id="list-title">Video List</h3>
+      <section id="video-list"></section>
+      <div class="player inactive">
+        <video class="player_video"></video>
+        <div class="player_controls">
+          <div class="elapsed">
+            <div class="elapsed_filled"></div>
+          </div>
+          <button class="player_button toggle" title="Toggle Play">></button>
+          <input
+            type="range"
+            name="volume"
+            class="player_slider"
+            min="0"
+            max="1"
+            step="0.05"
+            value="1"
+          />
+          <button data-skip="-10" class="player_button"><< 10s</button>
+          <button data-skip="10" class="player_button">10s >></button>
+        </div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

@@ -7,7 +7,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   getVideo: function (req, res) {
-    db.Video.find({ _id: req.params.id }).then((video) => res.json(video));
+    db.Video.findById({ _id: req.params.id }).then((video) => res.json(video));
   },
   addVideo: function (req, res) {
     const video = {
