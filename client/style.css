@@ -140,7 +140,11 @@ p {
   flex-basis: 50%;
 }
 
-label,
+label {
+  background: transparent;
+  flex-shrink: 3;
+}
+
 i {
   background: transparent;
 }

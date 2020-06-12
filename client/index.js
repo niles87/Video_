@@ -9,6 +9,8 @@ const progressBar = player.querySelector(".elapsed_filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const volume = player.querySelector(".player_slider");
+const fsButton = player.querySelector(".player_fullscreen");
+const fullScreen = player.querySelector("#fullscreen");
 
 let mouseDown = false;
 
@@ -66,8 +68,8 @@ const clickEvent = function (e) {
     let id = e.target.getAttribute("data");
     if (player.className === "player inactive") {
       player.className = "player active";
-      section.style.display = "none";
     }
+    section.style.display = "none";
     watchVideo(id);
   }
 };
@@ -84,7 +86,9 @@ const playVideoToggle = function () {
 
 const updateButton = function () {
   const icon = this.paused ? "▶️" : "| |";
+  const tip = this.paused ? "Toggle Play" : "Toggle Pause";
   toggle.textContent = icon;
+  toggle.setAttribute("title", tip);
 };
 
 const handleElapsed = function () {
@@ -109,6 +113,18 @@ const videoEnded = function () {
   section.style.display = "flex";
 };
 
+const toggleFullscreen = function () {
+  if (!document.fullscreenElement) {
+    fullScreen.textContent = "fullscreen_exit";
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      fullScreen.textContent = "fullscreen";
+      document.exitFullscreen();
+    }
+  }
+};
+
 // event listeners
 
 window.addEventListener("load", getVideos);
@@ -116,6 +132,9 @@ window.addEventListener("load", getVideos);
 section.addEventListener("click", function (e) {
   clickEvent(e);
 });
+
+/* video events */
+
 video.addEventListener("click", playVideoToggle);
 video.addEventListener("play", updateButton);
 video.addEventListener("pause", updateButton);
@@ -129,6 +148,8 @@ skipButtons.forEach(function (button) {
 });
 
 volume.addEventListener("change", handleVolumeUpdate);
+
+fsButton.addEventListener("click", toggleFullscreen);
 
 progress.addEventListener("click", scrub);
 progress.addEventListener("mousemove", function (e) {
