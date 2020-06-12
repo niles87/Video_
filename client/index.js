@@ -22,15 +22,15 @@ const getVideos = function () {
           let div = document.createElement("div");
           let title = document.createElement("p");
           let description = document.createElement("p");
-          let img = document.createElement("img");
+
           div.setAttribute("data", element._id);
           div.className = "content";
           title.innerHTML = `<strong>Title: </strong>${element.title}`;
           description.innerHTML = `<strong>Description: </strong>${element.description}`;
-          img.setAttribute("alt", element.image);
+
           div.appendChild(title);
           div.appendChild(description);
-          div.appendChild(img);
+
           section.appendChild(div);
         });
       }
