@@ -18,3 +18,7 @@ To see the deployed version of the application [click here](https:/vanilla-video
 ### Future Development
 
 As stated before this application is still in progress but will be completed and a few small bugs worked out (the list of videos doesn't hide at the moment every single time a new video is played) soon enough. Write an issue if anymore bugs are found.
+
+### Copyright
+
+As far as I know the videos on this app do not have any licenses and are open source. If that's not the case please let me know so I can take them down.
