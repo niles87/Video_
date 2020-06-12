@@ -75,8 +75,10 @@ const clickEvent = function (e) {
 const playVideoToggle = function () {
   if (video.paused) {
     video.play();
+    section.style.display = "none";
   } else {
     video.pause();
+    videoEnded();
   }
 };
 
