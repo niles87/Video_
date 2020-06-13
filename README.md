@@ -2,7 +2,7 @@
 
 ## Overview
 
-Full Stack application using vanilla JavaScript on the front-end to customize a video player. The video player and the application are still in their infancy but as it sits on this date (6/11/20) it is completely functional.
+Full Stack application using vanilla JavaScript on the front-end to customize a video player. The video player and the application are still in their infancy but as it sits on this date, it is completely functional.
 There are four short videos with the file path stored in a mongoDB collection. The only dependencies are on the back-end being express, mongoose, and dotenv.
 
 <p align="center">
@@ -17,7 +17,7 @@ To see the deployed version of the application [click here](https:/vanilla-video
 
 ### Future Development
 
-As stated before this application is still in progress but will be completed and a few small bugs worked out (the list of videos doesn't hide at the moment every single time a new video is played) soon enough. Write an issue if anymore bugs are found.
+As stated before this application is still in progress but will be completed and a few small bugs worked out soon enough. Write an issue if anymore bugs are found.
 
 ### Copyright
 
