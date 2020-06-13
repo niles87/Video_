@@ -117,10 +117,15 @@ const toggleFullscreen = function () {
   if (!document.fullscreenElement) {
     fullScreen.textContent = "fullscreen_exit";
     document.documentElement.requestFullscreen();
+    player.style.maxWidth = "none";
+    player.style.width = window.innerWidth;
+    player.style.margin = "0";
   } else {
     if (document.exitFullscreen) {
       fullScreen.textContent = "fullscreen";
       document.exitFullscreen();
+      player.style.maxWidth = "750px";
+      player.style.margin = "20px auto";
     }
   }
 };
